@@ -15,7 +15,7 @@ void linkedListTraversls(struct Node *ptr){
 //DELETING THE HEAD
 struct Node * deleteFirst(struct Node * head){
     struct Node * ptr = head;
-   head = head->next;
+    head = head->next;
     free(ptr);
     return head;
 }
@@ -35,7 +35,7 @@ struct Node * deleteAtIndex(struct Node * head,int index){
 }
 // <==============================================================>
 //DELETING LAST ELEMENT
-struct Node * deleteAtIndex(struct Node * head,int value){
+struct Node * deleteAtLast(struct Node * head){
     struct Node *p = head;
     struct Node *q = head->next;
     while (q->next !=NULL)
@@ -95,7 +95,10 @@ int main(){
     printf("Linked list before deletion\n");
     linkedListTraversls(head);
 
-    head = deleteAtGivenValue(head,3);
+    //head = deleteFirst(head);
+    //head = deleteAtIndex(head,3);
+    //head = deleteAtLast(head);
+    // head = deleteAtGivenValue(head,11);
     printf("Linked list after deletion\n");
     linkedListTraversls(head);
     return 0;
